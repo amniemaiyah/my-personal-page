@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Lovely Family</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #F3D0A9, #F6E2B3);
+            overflow-x: hidden;
+            color: #34495E;
+        }
+
+        header {
+            background: #A8DADC;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 5px solid #F1F3F5;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            color: #b94e48 ;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            text-align: center;
+            background: #FFF;
+            padding: 60px 20px;
+            border-radius: 20px;
+            max-width: 900px;
+            margin: 40px auto;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: maroon;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        section p {
+            font-size: 1.2rem;
+            margin: 15px 0;
+            color: #000000; 
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        section img {
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        section img:hover {
+            transform: scale(1.1);
+        }
+
+        .family-tree {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .family-member {
+            text-align: center;
+            margin: 20px;
+            position: relative;
+        }
+
+        .family-member img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .family-member:hover img {
+            transform: scale(1.1);
+        }
+
+        .family-member p {
+            font-size: 1.1rem;
+            color: #000000;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .testimonials {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial {
+            background: #A8DADC;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial h3 {
+            font-size: 1.5rem;
+            color: #5B8C8D;
+        }
+
+        .testimonial p {
+            font-size: 1rem;
+            color: #000000; 
+            line-height: 1.5;
+        }
+
+        nav {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1rem;
+            color: white;
+            background: #F1A7A6;
+            border-radius: 40px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            margin: 5px;
+        }
+
+        nav a:hover {
+            background: #5B8C8D;
+            color: #A8DADC;
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            section img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .family-tree {
+                flex-direction: column;
+            }
+
+            .testimonial {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Lovely Family 👨‍👩‍👧‍👦</h1>
+        <p>Meet the people who inspire me every day!</p>
+    </header>
+
+    <section>
+        <h2>💗 Meet My Father 💗</h2>
+        <img src="father pic.jpg" alt="Father Photo" onclick="openModal('father')">
+        <p>“My father's name is Helmy Bin Talib, born on January 4, 1978, in Yan, Kedah. He is supervisor and a great role model. He shows boundless dedication to our family, and his strength and support are something I admire greatly.”</p>
+    </section>
+
+    <section>
+        <h2>💗 Meet My Mother 💗</h2>
+        <img src="mother pic.jpg" alt="Mother Photo" onclick="openModal('mother')">
+        <p>“My mother's name is Suhaily Binti Muda@Ramli, born on January 6 in Besut, Terengganu. She is a dedicated nurse and the rock of our family. Despite many challenges, she has always shown incredible resilience and love for us.”</p>
+    </section>
+
+    <section>
+        <h2>❤️‍🔥 Meet My Siblings ❤️‍🔥</h2>
+        <div class="family-tree">
+            <div class="family-member">
+                <img src="brother pic.jpg" alt="Brother Photo" onclick="openModal('brother')">
+                <p>My younger brother, Muhammad Amshyar Shyafrel, is 15. His playful nature and energy always inspire me.</p>
+            </div>
+            <div class="family-member">
+                <img src="sister pic.jpg" alt="Sister Photo" onclick="openModal('sister')">
+                <p>My younger sister, Nur Amnyshya Shyarha, is 11. Her creativity and optimism are contagious!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="testimonial">
+            <h3>Father's Love 💞</h3>
+            <p>“You are the best dad anyone could ask for, always so supportive and caring.”</p>
+        </div>
+        <div class="testimonial">
+            <h3>Mother's Strength 💞</h3>
+            <p>“Mom, your love is boundless, and your strength inspires me every day.”</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>My Biggest Happiness🩷🎀</h2>
+        <img src="family pic 1.jpg" alt="My lovely Parents">
+        <img src="family pic 2.jpg" alt="My lovely Parents">
+        <p>"In every conceivable manner, the family is a link to our past, a bridge to our future."</p>
+    </section>
+
+    <audio controls autoplay loop hidden>
+        <source src="audio family.mp3" type="audio/mp3">
+    </audio>
+
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">×</span>
+        <img class="modal-content" id="modal-image">
+    </div>
+
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="biodata.html">💖 About Me</a>
+        <a href="education.html">📚 Education</a>
+        <a href="experience.html">💼 Experience</a>
+        <a href="favfood.html">🍣 Favorite Food</a>
+
+    </nav>
+
+    <script>
+        function openModal(image) {
+            var modal = document.getElementById("modal");
+            var modalImage = document.getElementById("modal-image");
+            modal.style.display = "block";
+            modalImage.src = image + ".jpg";
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("modal");
+            modal.style.display = "none";
+        }
+    </script>
+
+</body>
+</html>

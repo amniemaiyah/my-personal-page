@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Kalam&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #F3D0A9, #F6E2B3);
+            overflow-x: hidden;
+            color: #5B8C8D;
+        }
+        header {
+            background: #A8DADC;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 4px solid #F1F3F5;
+            border-radius: 15px;
+            position: relative;
+        }
+        header h1 {
+            font-size: 3rem;
+            font-family: 'Kalam', cursive;
+            color: #5B8C8D;
+            margin: 0;
+        }
+        header .heart {
+            font-size: 1.5rem;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #FF6F61;
+        }
+        section {
+            text-align: center;
+            background: white;
+            padding: 60px 20px;
+            border-radius: 20px;
+            max-width: 1000px;
+            margin: 40px auto;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        section:hover {
+            transform: scale(1.02);
+        }
+        section h2 {
+            font-size: 2.5rem;
+            color: #5B8C8D;
+            margin-bottom: 30px;
+        }
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+        .gallery-item p {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 5px;
+            font-size: 1.1rem;
+            border-radius: 10px;
+            font-family: 'Kalam', cursive;
+        }
+        .video-container {
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        nav {
+            margin-top: 40px;
+            text-align: center;
+            background: #FF6F61;
+            padding: 15px 0;
+        }
+        nav a {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            color: white;
+            background: #F1A7A6;
+            border-radius: 50px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        nav a:hover {
+            background: #5B8C8D;
+            color: #A8DADC;
+            transform: translateY(-5px);
+        }
+        .icon {
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .new-arrival {
+            background: #F6C6B3;
+            padding: 10px;
+            font-size: 1.2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            color: #FF6F61;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Memorable Gallery 📸</h1>
+        <span class="heart">❤️</span>
+    </header>
+
+    <section>
+        <h2>Explore My Cute and Fun Photos!</h2>
+        <div class="new-arrival">
+            <p>✨ New arrivals! Check out the latest pics below! ✨</p>
+        </div>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="image 1.jpg" alt="Cute Image 1">
+            </div>
+
+            <div class="gallery-item">
+                <img src="image 2.jpg" alt="Cute Image 2">
+            </div>
+
+            <div class="gallery-item">
+                <img src="image 3.jpg" alt="Cute Image 3">    
+            </div>
+
+            <div class="gallery-item">
+                <img src="image 4.jpg" alt="Cute Image 4">  
+            </div>
+
+            <div class="gallery-item">
+                <img src="image 5.jpg" alt="Cute Image 5"> 
+            </div>
+
+            <div class="gallery-item">
+                <img src="image 6.jpg" alt="Cute Image 6">
+            </div>
+
+            <div class="gallery-item">
+                <img src="image 7.jpg" alt="Cute Image 7">
+            </div>
+
+            <div class="gallery-item">
+                <img src="image 8.jpg" alt="Cute Image 8">
+            </div>
+
+            <div class="gallery-item">
+                <img src="image 9.jpg" alt="Cute Image 9">    
+            </div>
+
+            <div class="gallery-item">
+                <img src="image 10.jpg" alt="Cute Image 10">   
+            </div>
+
+            <div class="gallery-item">
+                <img src="image 11.jpg" alt="Cute Image 11">    
+            </div>
+
+            <div class="gallery-item">
+                <img src="image 12.jpg" alt="Cute Image 12">  
+            </div>
+
+            <div class="gallery-item video-container">
+                <video controls autoplay loop style="width: 100%; height: 50vh;">
+                    <source src="video 1.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="gallery-item">
+                <img src="image 13.jpg" alt="Cute Image 13">
+            </div>
+
+            <div class="gallery-item video-container">
+                <video controls autoplay loop style="width: 100%; height: 50vh;">
+                    <source src="video 2.mp4" type="video/mp4">
+                </video>
+    
+            </div>
+            <div class="gallery-item">
+                <img src="image 14.jpg" alt="Cute Image 14"> 
+            </div>
+
+        </div>
+    </section>
+
+    <nav>
+        <a href="index.html"><span class="icon">🏠</span>Home</a>
+        <a href="biodata.html"><span class="icon">💖</span>About Me</a>
+        <a href="education.html"><span class="icon">📚</span>Education</a>
+        <a href="experience.html"><span class="icon">💼</span>Experience</a>
+        <a href="family.html"><span class="icon">👨‍👩‍👧‍👦</span>Family</a>
+        <a href="favfood.html"><span class="icon">🍔</span>Favorite Foods</a>
+    </nav>
+</body>
+</html>
